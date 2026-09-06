@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Recruitment System - Frontend
 
-## Getting Started
+Frontend application for an AI-powered recruitment screening system.
 
-First, run the development server:
+Candidates can select a job position, enter their information, upload a PDF CV, optionally provide a GitHub profile, and receive an AI-generated candidate-job fit analysis.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Recruiters can view evaluated applications through the recruitment dashboard.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Candidate Application
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Candidates can provide:
 
-## Learn More
+- Full Name
+- Email
+- Phone Number
+- Years of Experience
+- Job Position
+- Skills
+- GitHub Username / URL
+- PDF Resume / CV
 
-To learn more about Next.js, take a look at the following resources:
+### AI Result
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After submission, the candidate receives:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Fit Score /100
+- Classification
+- Risk Level
+- AI Decision
+- Evaluation Reason
+- Missing Skills
+- Recommended Skills
+- GitHub Analysis
 
-## Deploy on Vercel
+### Recruitment Dashboard
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The dashboard displays:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Total evaluated applications
+- Average AI Fit Score
+- Strong Matches
+- AI Rejected candidates
+- Recent applications
+- Candidate name
+- Applied position
+- Fit score
+- Classification
+- AI decision
+- Application date
+
+## Technologies
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- REST APIs
+- FormData / Multipart File Upload
+
+## Supported Job Positions
+
+The system supports multiple roles, including:
+
+- Frontend Developer
+- Backend Developer
+- Full Stack Developer
+- Data Science Intern
+- Software Engineer
+- IT Support Engineer
+- Network Support Engineer
+- UI/UX Designer
+
+## AI Decision Logic
+
+| Fit Score | Classification | Decision |
+|---|---|---|
+| 75-100 | Strong Match | Shortlist |
+| 45-74 | Needs Review | Human Review |
+| 0-44 | Weak Match | Reject |
+
+## Environment Configuration
+
+Create a `.env.local` file in the frontend directory.
+
+```env
+NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
